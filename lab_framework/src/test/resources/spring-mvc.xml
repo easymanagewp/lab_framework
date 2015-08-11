@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:context="http://www.springframework.org/schema/context" 
+	   xsi:schemaLocation="      
+          http://www.springframework.org/schema/beans      
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd      
+          http://www.springframework.org/schema/tx      
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd     
+          http://www.springframework.org/schema/context      
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd      
+          http://www.springframework.org/schema/aop      
+          http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    <!-- Spring MVC配置 -->
+    <context:annotation-config/>
+    <!-- 完成AOP的面向切面 -->
+	<aop:aspectj-autoproxy />
+	<!-- 开启注解 -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<!-- 类进行扫描，完成Bean创建和自动依赖注入的功能 -->
+	<context:component-scan base-package="cn.core.framework.common.action"/>
+          
+	<bean
+		class="org.springframework.aop.aspectj.annotation.AnnotationAwareAspectJAutoProxyCreator" />
+
+	<!-- 自定义拦截器 -->
+	<bean name="actionHandleInterceptor" class="cn.core.framework.interceptor.ActionHandleInterceptor">
+	</bean>
+	<bean name="duplicateSubmitHandle"
+		class="cn.core.framework.interceptor.DuplicateSubmitHandleInterceptor">
+	</bean>
+
+	<!-- 控制器请求映射配置，拦截器配置 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="actionHandleInterceptor" />
+				<ref bean="duplicateSubmitHandle" />
+			</list>
+		</property>
+	</bean>
+
+	<!-- 对静态资源文件的访问 <mvc:resources mapping="/img/**" location="/img/" cache-period="31556926" 
+		/> <mvc:resources mapping="/images/**" location="/images/" cache-period="31556926" 
+		/> <mvc:resources mapping="/js/**" location="/js/" cache-period="31556926" 
+		/> <mvc:resources mapping="/css/**" location="/css/" cache-period="31556926" 
+		/> <mvc:default-servlet-handler /> -->
+
+	<!-- 启动Spring MVC的注解功能，完成请求和注解POJO的映射 -->
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	</bean>
+ 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<bean id="exceptionResolver" class="cn.core.framework.interceptor.MappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="java.lang.Exception">error/exception</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- 视图解释类 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/page" />
+		<property name="suffix" value=".jsp" />
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+	</bean>
+
+</beans>

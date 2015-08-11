@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>系统模块</title>
+<script type="text/javascript" src="/static/js/jquery/jquery-1.11.2.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/admin/js/admin.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/admin/js/base.js" charset="utf-8"></script>
+<script type="text/javascript" data-basePath="http://localhost:8080" src="/static/vlims/js/config.js" ></script>
+<link rel="stylesheet" type="text/css" href="/static/lhgdialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/static/ztree/zTreeStyle.css" />
+<script type="text/javascript" src="/static/lhgdialog/lhgdialog.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/ztree/jquery.ztree.all-3.5.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="/static/requirejs/require.js" ></script>
+<script src="/static/component/main.min.js"></script>
+<script>
+	function accountBack(nodes){
+		$("#selectedAccounts").html('已经选择账户：');
+		$.each(nodes,function(){
+			$("#selectedAccounts").append(this.userName+"("+this.loginName+")");
+		})
+	}
+	
+	function orgBack(nodes){
+		$("#selectedOrgs").html('已经选择组织：');
+		$.each(nodes,function(){
+			$("#selectedOrgs").append(this.name+"&nbsp;&nbsp;");
+		})
+	}
+	
+	function orgTreeBack(node){
+		alert("点击节点："+node.name+"---id:"+node.id);
+	}
+</script>
+</head>
+<body>
+	Code列表：<select data-businfo="sys" data-default="检验模块" data-code="xtmk" class="v-com-code"></select>
+	<br><br>
+	<button class="v-com-account" data-back='accountBack' data-default='402882e94e71f8e4014e71f98af00000,402882e94e71f8e4014e71fa17f90003'>点击选择账户</button>
+	<span id="selectedAccounts" ></span>
+	<br><br>
+	<button class="v-com-org" data-back='orgBack' data-default='402881e94d527b0d014d527e5b6d0001,402881e94d527b0d014d527e5b6d0002'>选择组织</button>
+	<span id="selectedOrgs"></span>
+	<br><br>
+	显示账户：<span data-id='402882e94e71f8e4014e71f98af00000' class='v-com-account-view'></span>&nbsp;<span data-id='402882e94e71f8e4014e71fa17f90003' class='v-com-account-view'></span>
+	<br><br>
+	显示组织：<span data-id='402881e94d527b0d014d527e5b6d0001' class='v-com-org-view'></span>&nbsp;<span data-id='402881e94d527b0d014d527e5b6d0002' class='v-com-org-view'></span>
+	<br><br>
+	显示组织树（点击查看）：
+	<div>
+		<ul class='v-com-org-tree' data-back='orgTreeBack'></ul>
+	</div>
+	<br><br>
+	显示岗位信息：<span class='v-com-duty-view' data-id='402882eb4dc27682014dc278007a0002'></span>
+</body>
+</html>

@@ -1,0 +1,358 @@
+@charset "utf-8";
+
+/* ---------- Common ---------- */
+
+body {
+	color: #333;
+	font-family:'\5FAE\8F6F\96C5\9ED1';
+	font-size:14px;
+  padding:0 15px;
+}
+.body {padding:20px 20px 30px;background:#fff;border-radius: 3px;
+    box-shadow: 1px 1px 2px 0 #cccccc;}
+.tcbody {padding:0 20px 30px;background:#fff;}
+
+.bar {
+	height: 70px;
+	line-height: 70px;
+	clear: both;
+	padding-left: 10px;
+	color: #3498db;
+	background:none;
+	font-size:18px;
+}
+
+.s_titile {font-size:16px;color:#333;padding-bottom:10px;clear:both;}
+
+.bitian {color:#f60;padding-right:3px;}
+/* ---------- Index ---------- */
+.index {background:#f2f2f2;}
+.index .body {
+	padding: 10px;
+}
+
+.index .bodyLeft {
+	width: 50%;
+	float: left;
+}
+
+.index .bodyRight {
+	width: 49%;
+	float: right;
+}
+
+.index .listTable {
+	width: 100%;
+	border: 1px solid #fff;
+}
+
+.index .listTable th {
+	height: 40px;
+	line-height: 40px;
+	padding: 0px 10px;
+	color: #f60;
+	text-align: left;
+	background: #fff;
+	border-bottom:1px solid #f60;
+	font-size:18px;
+}
+
+.index .listTable td {
+	line-height: 30px;
+	text-align: left;
+	padding-left: 10px;
+	border-bottom: 1px dotted #f60;
+	background:#fff;
+}
+
+.index .copyright {
+	line-height: 30px;
+	clear: both;
+	text-align: right;
+	font-size: 12px;
+	color: #444444;
+}
+
+/* ---------- List ---------- */
+
+
+.tab {
+	height: 30px;
+	padding-left: 160px;
+	margin: 0;
+	background: url(../images/admin_x_bg.gif) 0px -120px repeat-x;
+}
+
+.tab li {
+	float: left;
+	margin-right: 5px;
+}
+
+.tab li input {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #666666;
+	cursor: pointer;
+	outline: none;
+	border: none;
+	background: url(../images/admin_button.gif) -120px -30px no-repeat;
+}
+
+.tab li input:hover {
+	color: #3498DB;
+}
+
+ul.tab li input.current {
+	color: #000000;
+	font-weight: bold;
+	background: url(../images/admin_button.gif) 0px -30px no-repeat;
+}
+
+.buttonbar {
+	height:40px;
+	clear: both;
+	background-color: #fff;
+}
+.searchBar {
+	min-height:35px;
+	clear: both;
+	background-color: #fff;
+}
+.normalsearchbar  {padding:0px;min-height:40px;clear:both;}
+.highsearchbar {padding:0px;min-height:40px;clear:both;}
+.buttonbar_l {float:left;}
+.buttonbar_r {float:right;}
+
+.searchBar label {height:28px;line-height:28px;color:#333;float:left;}
+.searchBar input {height:28px;line-height:28px;border:1px solid #ccc;color:#333;float:left;margin-right:5px;padding-left:3px;}
+.searchBar select  {height:28px;line-height:28px;border:1px solid #ccc;color:#333;float:left;margin-right:5px;padding-left:3px;}
+.morestj {vertical-align:bottom; font-size: 12px;height: 40px;line-height: 40px;color:#999;}
+.s_blank {clear:both;height:1px;font-size:1px;margin-bottom:10px;}
+
+.listTable {
+	width: 100%;
+	clear: both;
+}
+
+.listTable tr:hover {
+	background-color: #E7EBEE;
+}
+
+.listTable tr.checked {
+	background-color: #fff8e4;
+}
+
+.listTable th {
+	height: 24px;
+	line-height: 24px;
+	text-align: left;
+	color: #5b5b5b;
+	font-weight: bold;
+	border-top: solid 1px #d8deea;
+	border-bottom: solid 1px #c6c9ca;
+	border-right: solid 1px #c6c9ca;
+	background: url(../images/admin_bg.gif) 0px -60px repeat-x;
+  padding-left:5px;
+}
+
+.listTable th a,.listTable th span {
+	padding-left:5px;
+	margin-left:-5px;
+}
+
+.listTable .check {
+	width: 21px;
+	padding: 0px 5px;
+}
+
+.listTable .sort {
+	height: 24px;
+	line-height: 24px;
+	display: block;
+	outline: none;
+}
+
+.listTable .sort:hover {
+	color: #000000;
+	background: url(../images/admin_bg.gif) 0px -90px repeat-x;
+}
+
+.listTable .desc,.listTable .desc:hover {
+	background: url(../images/admin_icon.gif) right -180px no-repeat;
+}
+
+.listTable .asc,.listTable .asc:hover {
+	background: url(../images/admin_icon.gif) right -240px no-repeat;
+}
+
+.listTable td {
+	line-height:46px;
+	padding-left: 5px;
+	border-bottom: 1px solid #E7EBEE;
+	vertical-align:top;
+}
+
+.listTable tr:hover {
+	background-color: #efefef;
+}
+
+.listTable tr:hover th {
+	background-color: #efefef;
+}
+
+.listTable td a {
+	color: #3498DB;
+}
+
+.listTable td a:hover {
+	color: #3498DB;text-decoration:underline;
+}
+
+.pagerBar {
+	height: 50px;
+	line-height: 50px;
+	padding: 0 8px;
+	clear: both;
+
+	background-color: #fff;
+}
+
+.pagerBar .delete {
+	float: left;
+}
+
+.pagerBar .pager {
+	float: right;
+	padding-top: 5px;
+}
+
+#pager .pages {
+	float: right;
+	font-size: 12px;
+	text-transform: uppercase;
+	border: none;
+	margin-top:15px;
+}
+
+#pager .pages li {
+	line-height: 16px;
+	float: left;
+	padding: 2px 5px;
+	margin-left: 5px;
+	cursor: pointer;
+	border: 1px solid #DDDDDD;
+	color:#369ADC;
+}
+
+#pager .pages li:hover {
+	border: 1px solid #369ADC;
+}
+
+#pager .pages .pgEmpty {
+	color: #369ADC;
+	padding: 2px 5px;
+	cursor: default;
+	border: 1px solid #DDD;
+}
+
+#pager .pages .pgCurrent {
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #369ADC;
+	background-color: #369ADC;
+}
+
+.noRecord {
+	height: 30px;
+	line-height: 30px;
+	clear: both;
+	color: red;
+	text-align: center;
+	border-bottom: 1px solid #cccccc;
+}
+
+/* ---------- Input ---------- */
+
+.inputTable {
+	width: 100%;
+	word-break: break-all;
+}
+
+.inputTable th {
+	width: 150px;
+	line-height: 25px;
+	padding: 5px 10px 5px 0px;
+	text-align: right;
+	font-weight: normal;
+	color: #333333;
+	border-bottom: 1px solid #E7EBEE;
+	background-color: #F9F9F9;
+	vertical-align:top;
+}
+
+.inputTable tr:hover {
+	background-color: #efefef;
+}
+
+.inputTable tr:hover th {
+	background-color: #efefef;
+}
+
+.inputTable tr.noneHover:hover {
+	background-color: #ffffff;
+}
+
+.inputTable tr.noneHover:hover th {
+	background-color: #ffffff;
+}
+
+.inputTable .title th, .input .inputTable .title td {
+	text-align: left;
+	padding-left: 5px;
+	background-color: #ecf3f9;
+}
+
+.inputTable td {
+	line-height: 25px;
+	padding: 5px;
+	color: #333;
+	border-bottom: 1px solid #E7EBEE;
+	vertical-align:top;
+}
+
+.tableItem {
+	padding: 5px;
+}
+
+.tableItem .inputTable {
+	border: 1px solid #94b7d3;
+}
+
+.tableItem .inputTable .title {
+	font-weight: bold;
+	background-color: #ecf3f9;
+}
+
+.ke-container tr:hover {
+	background-color: #f0f0ee;
+}
+
+.ke-container td {
+	padding: 0px;
+	margin: 0px;
+	border: none;
+}
+
+.buttonArea {
+	padding: 10px 0px 10px 165px;
+	line-height: 25px;
+}
+
+.fieldTitle {
+	height: 29px;
+	line-height: 29px;
+	padding-right: 5px;
+}
+

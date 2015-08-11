@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<description>系统参数文件</description>
+	<server>
+		<url>http://192.168.2.107:8080/base/</url>
+		<name>LIMS</name>
+	</server>
+	
+	<msg>
+		<mail>
+			<isSend>true</isSend>
+			<host>smtp.163.com</host>
+			<fromMail>bangzhongbao@163.com</fromMail>
+			<pwd>bzb123456</pwd>
+		</mail>
+		<sms>
+			<isSend>true</isSend>
+			<sn>SDK-WSS-010-07888</sn>
+			<pwd>b5ea9@f1</pwd>
+			<sign>【LIMS】</sign>
+		</sms>
+	</msg>
+	
+	<project>
+		<!-- 代码生成根路径 -->
+		<baseDir>E:\git\framework\src\test\java</baseDir>
+		<!-- 代码生成包结构 -->
+		<basePackage>cn.core.framework</basePackage>
+	</project>
+	
+	<export>
+		<!-- 模板文件存放位置 -->
+		<template>E:\git\res1503\src\main\webapp\static\export\template</template>
+		<!-- 导出临时存放位置 -->
+		<temp>E:\git\res1503\src\main\webapp\static\export\temp</temp>
+	</export>
+	
+	<import>
+		<!-- 导入模板文件存放位置 -->
+		<template>E:\git\res1503\src\main\webapp\static\import\template</template>
+		<!-- 导入临时存放位置 -->
+		<temp>E:\git\res1503\src\main\webapp\static\import\temp</temp>
+	</import>
+	
+	<file>
+		<!-- 文件存储路径 -->
+		<path>E:\new workspace\frame\f-base\src\main\webapp\</path>
+		<!-- 附件路径 -->
+		<upload>static\upload\</upload>
+		<!-- 允许上传的文件列表 -->
+		<accept>xls,doc,docx,xlsx,zip,war,txt,pdf,jpg,png,jpeg,gif</accept>
+	</file>
+</config>

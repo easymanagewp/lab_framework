@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<description>系统参数文件</description>
+	
+	<server>
+		<url>http://localhost:8080/</url>
+		<base>E:\git\base\src\main\webapp\</base>
+		<name>LIMS</name>
+	</server>
+	
+	<msg>
+		<mail>
+			<isSend>true</isSend>
+			<host>smtp.163.com</host>
+			<fromMail>bangzhongbao@163.com</fromMail>
+			<pwd>bzb123456</pwd>
+		</mail>
+		<sms>
+			<isSend>true</isSend>
+			<sn>SDK-WSS-010-07888</sn>
+			<pwd>b5ea9@f1</pwd>
+			<sign>【LIMS】</sign>
+		</sms>
+	</msg>
+	
+	<project>
+		<baseDir>E:\workspace\labsoft\base\src\main\java</baseDir>
+		<basePackage>cn.vant.base.system</basePackage>
+	</project>
+	
+	<export>
+		<!-- 模板文件存放位置 -->
+		<template>static\export\template</template>
+		<!-- 导出临时存放位置 -->
+		<temp>static\export\temp</temp>
+	</export>
+	
+	<import>
+		<!-- 导入模板文件存放位置 -->
+		<template>static\import\template</template>
+		<!-- 导入临时存放位置 -->
+		<temp>static\import\temp</temp>
+	</import>
+	
+	<upload>
+		<!-- 文件存储路径 -->
+		<path>static\upload\</path>
+		<!-- 允许上传的文件列表 -->
+		<accept>xls,doc,docx,xlsx,zip,war,txt,pdf,jpg,png,jpeg,gif</accept>
+	</upload>
+</config>
